@@ -45,8 +45,8 @@ export default function Navbar() {
             <ul className="flex gap-4 bg-white p-4 font-bold text-[#00ADB5] rounded-4xl">
                 {[
                     { href: "/", label: "Home" },
-                    { href: "/projects", label: "Projects" },
-                    { href: "/services", label: "Services" },
+                    { href: "/about", label: "About Me" },
+                    { href: "/portfolio", label: "Portfolio" },
                     { href: "/contact", label: "Contact" },
                 ].map((item) => (
                     <li key={item.href}>

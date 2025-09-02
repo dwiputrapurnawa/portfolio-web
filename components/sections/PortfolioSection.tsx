@@ -1,4 +1,4 @@
-// components/PortfolioSection.tsx
+// components/PortfolioSectionReadable.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -7,21 +7,21 @@ const projects = [
     {
         title: "Sistem Operasional Rumah Potong Ayam",
         client: "Puri Pangan",
-        description: "Web App for operational management, built with Laravel & CodeIgniter.",
+        description: "Web App for operational management, built with Laravel & CodeIgniter. Features: inventory, order tracking, reporting dashboards.",
         image: "/images/rpa.png",
         link: "#",
     },
     {
         title: "ERP System",
         client: "Kopi Banyuatis",
-        description: "Enterprise Resource Planning platform for business management.",
+        description: "Enterprise Resource Planning platform for business management. Modules: finance, inventory, sales tracking.",
         image: "/images/erp-system.png",
         link: "#",
     },
     {
         title: "Landing Page",
         client: "D'land Property",
-        description: "Marketing landing page with responsive design and modern UI.",
+        description: "Marketing landing page with responsive design and modern UI, optimized for lead generation.",
         image: "/images/dland-property.png",
         link: "#",
     },
@@ -33,13 +33,17 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
 };
 
-export default function PortfolioSection() {
+export default function PortfolioSectionReadable() {
     return (
-        <section id="portfolio" className="py-20 px-8 md:px-20 bg-white">
+        <section id="portfolio" className="py-20 px-8 md:px-20 bg-white relative">
+            {/* Optional subtle background shapes */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-[#00ADB5]/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-10 right-10 w-48 h-48 bg-[#00ADB5]/5 rounded-full blur-3xl pointer-events-none"></div>
+
             {/* Heading */}
             <motion.h2
                 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-900 relative inline-block"
@@ -64,21 +68,28 @@ export default function PortfolioSection() {
                     <motion.a
                         key={index}
                         href={project.link}
-                        className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
+                        className="relative group overflow-hidden rounded-xl shadow-xl cursor-pointer"
                         variants={itemVariants}
-                        whileHover={{ scale: 1.03 }}
+                        whileHover={{ scale: 1.05, rotate: -1 }}
                     >
+                        {/* Project Image */}
                         <img
                             src={project.image}
                             alt={project.title}
                             className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                         />
-                        {/* Overlay */}
-                        <div className="absolute inset-0 bg-[#00ADB5] bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center px-4">
-                            <h3 className="text-xl font-semibold text-white mb-1">{project.title}</h3>
-                            <p className="text-white text-sm mb-2">{project.client}</p>
-                            <p className="text-white text-sm">{project.description}</p>
-                        </div>
+
+                        {/* Info Slide Overlay with dark gradient */}
+                        <motion.div
+                            className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 text-white transition-transform duration-300 translate-y-full group-hover:translate-y-0"
+                        >
+                            <h3 className="text-lg font-semibold drop-shadow-md">{project.title}</h3>
+                            <p className="text-sm font-medium opacity-80 drop-shadow-md">{project.client}</p>
+                            <p className="text-sm mt-1 line-clamp-3 drop-shadow-md">{project.description}</p>
+                        </motion.div>
+
+                        {/* Border Accent */}
+                        <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#00ADB5] transition-all duration-300"></div>
                     </motion.a>
                 ))}
             </motion.div>
