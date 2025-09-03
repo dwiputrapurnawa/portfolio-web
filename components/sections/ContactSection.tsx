@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaUser, FaRegEnvelope, FaCommentDots } from "react-icons/fa";
 import { useState } from "react";
 
 const containerVariants = {
@@ -35,8 +35,6 @@ export default function ContactSection() {
                 form.reset();
                 setShowThankYou(true);
                 setStatus("Email berhasil dikirim!");
-
-                // redirect ke homepage setelah 2 detik
                 setTimeout(() => {
                     window.location.href = "/";
                 }, 2000);
@@ -50,10 +48,10 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="relative py-20 px-8 md:px-20 bg-white overflow-hidden">
+        <section id="contact" className="relative py-20 px-6 md:px-20 bg-white overflow-hidden">
             {/* Heading */}
             <motion.h2
-                className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900 relative inline-block"
+                className="text-4xl md:text-5xl font-extrabold mb-16 text-center text-gray-900 relative inline-block"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -63,10 +61,10 @@ export default function ContactSection() {
                 <span className="absolute left-1/2 -bottom-3 w-24 h-1 bg-[#00ADB5] rounded-full -translate-x-1/2 shadow-md"></span>
             </motion.h2>
 
-            <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
+            <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
                 {/* Form */}
                 <motion.form
-                    className="flex-1 bg-white rounded-2xl shadow-xl p-8 space-y-6 border border-gray-200"
+                    className="bg-white rounded-2xl shadow-lg p-8 space-y-6 border border-gray-100"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -75,42 +73,51 @@ export default function ContactSection() {
                 >
                     <input type="hidden" name="_captcha" value="false" />
 
-                    <motion.div variants={itemVariants}>
+                    <motion.div variants={itemVariants} className="relative">
                         <label className="block text-gray-700 font-semibold mb-2">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-                            required
-                        />
+                        <div className="relative">
+                            <FaUser className="absolute left-4 top-3 text-gray-400" />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
+                                required
+                            />
+                        </div>
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
                         <label className="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="you@example.com"
-                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-                            required
-                        />
+                        <div className="relative">
+                            <FaRegEnvelope className="absolute left-4 top-3 text-gray-400" />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
+                                required
+                            />
+                        </div>
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
                         <label className="block text-gray-700 font-semibold mb-2">Message</label>
-                        <textarea
-                            name="message"
-                            rows={5}
-                            placeholder="Your message..."
-                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-                            required
-                        />
+                        <div className="relative">
+                            <FaCommentDots className="absolute left-4 top-4 text-gray-400" />
+                            <textarea
+                                name="message"
+                                rows={5}
+                                placeholder="Your message..."
+                                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
+                                required
+                            />
+                        </div>
                     </motion.div>
 
                     <motion.button
                         type="submit"
-                        className="w-full bg-[#00ADB5] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-[#0097A0] hover:shadow-[#00ADB5]/40 transition-all duration-300"
+                        className="w-full bg-[#00ADB5] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#0097A0] transition-all duration-300"
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -123,7 +130,7 @@ export default function ContactSection() {
 
                 {/* Contact Info */}
                 <motion.div
-                    className="flex-1 flex flex-col justify-center space-y-6"
+                    className="flex flex-col justify-center space-y-6"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -153,7 +160,7 @@ export default function ContactSection() {
                     ].map((item, i) => (
                         <motion.div
                             key={i}
-                            className="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group"
+                            className="flex items-center gap-4 p-5 rounded-xl bg-white border border-gray-100 shadow hover:shadow-md transition-all cursor-pointer group"
                             variants={itemVariants}
                             whileHover={{ scale: 1.03 }}
                         >
@@ -186,13 +193,15 @@ export default function ContactSection() {
                         exit={{ opacity: 0 }}
                     >
                         <motion.div
-                            className="bg-white rounded-xl p-12 text-center shadow-lg"
-                            initial={{ scale: 0.8 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.8 }}
+                            className="bg-white rounded-2xl p-12 text-center shadow-2xl max-w-md"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
                         >
-                            <h3 className="text-2xl font-bold mb-4 text-[#00ADB5]">Terima Kasih!</h3>
-                            <p className="text-gray-700">Pesan Anda telah dikirim. Anda akan diarahkan ke halaman utama sebentar lagi.</p>
+                            <h3 className="text-3xl font-extrabold mb-4 text-[#00ADB5]">✨ Terima Kasih!</h3>
+                            <p className="text-gray-700">
+                                Pesan Anda berhasil dikirim. Anda akan diarahkan ke halaman utama sebentar lagi 🚀
+                            </p>
                         </motion.div>
                     </motion.div>
                 )}
