@@ -15,6 +15,9 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Ida Bagus Dwi Putra Purnawa Portfolio Website",
   description: "Ida Bagus Dwi Putra Purnawa Portfolio Website",
+  icons: {
+    icon: "/favicon.svg",
+  }
 };
 
 export default function RootLayout({

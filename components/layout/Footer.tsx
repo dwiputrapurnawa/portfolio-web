@@ -3,6 +3,7 @@
 
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Code2 } from "lucide-react";
 
 const socialLinks = [
     { icon: <FaGithub />, href: "https://github.com/dwiputrapurnawa" },
@@ -36,9 +37,12 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-2xl font-bold text-[#00ADB5]">
-                        Ida Bagus Dwi Putra Purnawa
-                    </h2>
+                    <div className="flex gap-2">
+                        <Code2 className="w-8 h-8 text-[#ffffff]" />
+                        <h2 className="text-2xl font-bold text-[#00ADB5]">
+                            Ida Bagus Dwi Putra Purnawa
+                        </h2>
+                    </div>
                     <p className="text-sm text-gray-400 mt-1">
                         &copy; {new Date().getFullYear()} All Rights Reserved
                     </p>
