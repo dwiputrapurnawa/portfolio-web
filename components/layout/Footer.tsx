@@ -2,57 +2,96 @@
 "use client";
 
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const socialLinks = [
+    { icon: <FaGithub />, href: "https://github.com/dwiputrapurnawa" },
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/ida-bagus-dwi-putra-purnawa-5a929b174/" },
+    { icon: <FaInstagram />, href: "https://instagram.com/idabagusdwiputrapurnawa" },
+];
+
+const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "#about" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
+];
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-12 px-8 md:px-20 relative">
+        <motion.footer
+            className="bg-gray-900 text-white py-12 px-8 md:px-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+        >
             {/* Top Section */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Branding / Copyright */}
-                <div className="text-center md:text-left">
-                    <h2 className="text-2xl font-bold text-[#00ADB5]">Ida Bagus Dwi Putra Purnawa</h2>
-                    <p className="text-sm text-gray-400 mt-1">&copy; {new Date().getFullYear()} All Rights Reserved</p>
-                </div>
+                <motion.div
+                    className="text-center md:text-left"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="text-2xl font-bold text-[#00ADB5]">
+                        Ida Bagus Dwi Putra Purnawa
+                    </h2>
+                    <p className="text-sm text-gray-400 mt-1">
+                        &copy; {new Date().getFullYear()} All Rights Reserved
+                    </p>
+                </motion.div>
 
                 {/* Social Media Links */}
-                <div className="flex gap-6 text-xl">
-                    <a
-                        href="https://github.com/username"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00ADB5] transition-colors"
-                    >
-                        <FaGithub />
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/username"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00ADB5] transition-colors"
-                    >
-                        <FaLinkedin />
-                    </a>
-                    <a
-                        href="https://instagram.com/username"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00ADB5] transition-colors"
-                    >
-                        <FaInstagram />
-                    </a>
-                </div>
+                <motion.div
+                    className="flex gap-6 text-xl"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    {socialLinks.map((link, idx) => (
+                        <motion.a
+                            key={idx}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#00ADB5] transition-colors"
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {link.icon}
+                        </motion.a>
+                    ))}
+                </motion.div>
             </div>
 
-            {/* Optional Divider */}
-            <div className="border-t border-gray-700 mt-8"></div>
+            {/* Divider */}
+            <motion.div
+                className="border-t border-gray-700 mt-8"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 0.8 }}
+            ></motion.div>
 
             {/* Bottom Navigation */}
-            <div className="mt-6 flex flex-col md:flex-row justify-center gap-4 text-gray-400 text-sm">
-                <a href="#about" className="hover:text-[#00ADB5] transition-colors">About</a>
-                <a href="#skills" className="hover:text-[#00ADB5] transition-colors">Skills</a>
-                <a href="#portfolio" className="hover:text-[#00ADB5] transition-colors">Portfolio</a>
-                <a href="#contact" className="hover:text-[#00ADB5] transition-colors">Contact</a>
-            </div>
-        </footer>
+            <motion.div
+                className="mt-6 flex flex-col md:flex-row justify-center gap-4 text-gray-400 text-sm"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+                {navLinks.map((link, idx) => (
+                    <a
+                        key={idx}
+                        href={link.href}
+                        className="hover:text-[#00ADB5] transition-colors"
+                    >
+                        {link.name}
+                    </a>
+                ))}
+            </motion.div>
+        </motion.footer>
     );
 }
