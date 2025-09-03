@@ -8,6 +8,12 @@ export default function HeroSection() {
     const [displayedText, setDisplayedText] = useState("");
     const fullText = "I am a Full Stack Web Developer specializing in modern, responsive, and user-friendly web applications.";
 
+    const handleScroll = (id: string) => {
+        const section = document.querySelector(id);
+        section?.scrollIntoView({ behavior: "smooth" });
+    };
+
+
     useEffect(() => {
         let i = 0;
         const interval = setInterval(() => {
@@ -31,10 +37,16 @@ export default function HeroSection() {
                     {displayedText}
                 </p>
                 <div className="flex gap-4 animate-fadeUp delay-400">
-                    <a href="#portfolio" className="px-6 py-3 bg-white text-[#00ADB5] font-semibold rounded-lg shadow-lg transform transition-all hover:scale-105 hover:bg-gray-100">
+                    <a href="#portfolio" className="px-6 py-3 bg-white text-[#00ADB5] font-semibold rounded-lg shadow-lg transform transition-all hover:scale-105 hover:bg-gray-100" onClick={(e) => {
+                        e.preventDefault();
+                        handleScroll("#portfolio");
+                    }}>
                         View Portfolio
                     </a>
-                    <a href="#contact" className="px-6 py-3 border border-white font-semibold rounded-lg transform transition-all hover:scale-105 hover:bg-white hover:text-[#00ADB5]">
+                    <a href="#contact" className="px-6 py-3 border border-white font-semibold rounded-lg transform transition-all hover:scale-105 hover:bg-white hover:text-[#00ADB5]" onClick={(e) => {
+                        e.preventDefault();
+                        handleScroll("#contact");
+                    }}>
                         Contact Me
                     </a>
                 </div>

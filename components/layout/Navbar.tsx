@@ -1,6 +1,15 @@
+"use client";
+
 import { ArrowUpRight, SunIcon, MoonIcon, Code2 } from 'lucide-react'
 
 export default function Navbar() {
+
+    const handleScroll = (id: string) => {
+        const section = document.querySelector(id);
+        section?.scrollIntoView({ behavior: "smooth" });
+    };
+
+
     return (
         <nav className="p-4 bg-white flex justify-between">
             <a
@@ -44,14 +53,22 @@ export default function Navbar() {
 
             <ul className="flex gap-4 bg-white p-4 font-bold text-[#00ADB5] rounded-4xl">
                 {[
-                    { href: "/", label: "Home" },
-                    { href: "/about", label: "About Me" },
-                    { href: "/portfolio", label: "Portfolio" },
-                    { href: "/contact", label: "Contact" },
+                    { href: "#home", label: "Home" },
+                    { href: "#about", label: "About Me" },
+                    { href: "#portfolio", label: "Portfolio" },
+                    { href: "#skills", label: "Skills" },
+                    { href: "#contact", label: "Contact" },
                 ].map((item) => (
                     <li key={item.href}>
                         <a
                             href={item.href}
+                            onClick={(e) => {
+                                // mencegah default anchor behavior
+                                e.preventDefault();
+                                // scroll ke section target dengan smooth behavior
+                                const section = document.querySelector(item.href);
+                                section?.scrollIntoView({ behavior: "smooth" });
+                            }}
                             className="relative inline-block transition-all duration-300 
                    hover:text-[#0097A0] hover:-translate-y-0.5 hover:scale-105
                    after:content-[''] after:absolute after:left-0 after:bottom-[-6px] 
@@ -64,6 +81,7 @@ export default function Navbar() {
                     </li>
                 ))}
             </ul>
+
 
 
 
@@ -82,7 +100,12 @@ export default function Navbar() {
 
 
                 <button className="p-4 text-white rounded-2xl flex gap-2 bg-[#00ADB5] 
-                   hover:bg-[#0097A0] transition-all duration-300 group">
+                   hover:bg-[#0097A0] transition-all duration-300 group"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleScroll("#contact");
+                    }}
+                >
                     <span>Contact Me</span>
                     <ArrowUpRight className="w-6 h-6 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>

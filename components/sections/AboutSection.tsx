@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { SiLaravel, SiCodeigniter } from "react-icons/si";
 
 const containerVariants = {
     hidden: {},
@@ -52,7 +53,7 @@ export default function AboutSection() {
                         className="text-lg md:text-xl text-gray-800 leading-relaxed"
                         variants={itemVariants}
                     >
-                        I specialize in frontend and backend development with <span className="text-[#00ADB5] font-medium">React, Next.js, Node.js, Express</span>, and databases like <span className="text-[#00ADB5] font-medium">MongoDB & MySQL</span>. I focus on clean, efficient, and maintainable code.
+                        I specialize in frontend and backend development with <span className="text-[#00ADB5] font-medium">React, Next.js, Node.js, Express</span>, and backend frameworks like <span className="text-[#00ADB5] font-medium">Laravel & CodeIgniter</span>, as well as databases like <span className="text-[#00ADB5] font-medium">MongoDB & MySQL</span>. I focus on clean, efficient, and maintainable code.
                     </motion.p>
                     <motion.p
                         className="text-lg md:text-xl text-gray-800 leading-relaxed"
@@ -83,6 +84,18 @@ export default function AboutSection() {
                             className="text-[#f29111] cursor-pointer transition-shadow duration-300 hover:drop-shadow-[0_0_12px_#00ADB5]"
                         >
                             <FaDatabase />
+                        </motion.span>
+                        <motion.span
+                            whileHover={{ scale: 1.2 }}
+                            className="text-[#ff2d20] cursor-pointer transition-shadow duration-300 hover:drop-shadow-[0_0_12px_#00ADB5]"
+                        >
+                            <SiLaravel />
+                        </motion.span>
+                        <motion.span
+                            whileHover={{ scale: 1.2 }}
+                            className="text-[#ef4223] cursor-pointer transition-shadow duration-300 hover:drop-shadow-[0_0_12px_#00ADB5]"
+                        >
+                            <SiCodeigniter />
                         </motion.span>
                     </motion.div>
                 </motion.div>

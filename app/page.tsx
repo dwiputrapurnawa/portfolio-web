@@ -9,13 +9,15 @@ import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <PortfolioSection />
-      <ContactSection />
-      <Footer />
+      <div className="scroll-smooth">
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <PortfolioSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </>
   );
 }
