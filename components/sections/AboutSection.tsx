@@ -1,6 +1,4 @@
-// components/AboutAnimated.tsx
 "use client";
-
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiLaravel, SiCodeigniter } from "react-icons/si";
@@ -21,7 +19,7 @@ const itemVariants = {
 
 export default function AboutSection() {
     return (
-        <section id="about" className="py-20 px-8 md:px-20 bg-white">
+        <section id="about" className="py-16 px-8 md:px-20 bg-white">
             {/* Heading */}
             <motion.h2
                 className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900 relative inline-block"
@@ -34,7 +32,7 @@ export default function AboutSection() {
                 <span className="absolute left-1/2 -bottom-2 w-20 h-1 bg-[#00ADB5] rounded-full -translate-x-1/2"></span>
             </motion.h2>
 
-            <div className="flex flex-col md:flex-row items-start gap-12 mt-8">
+            <div className="flex flex-col md:flex-row items-start gap-12">
                 {/* Teks */}
                 <motion.div
                     className="md:w-3/5 space-y-6"
@@ -102,14 +100,14 @@ export default function AboutSection() {
 
                 {/* Ilustrasi */}
                 <motion.div
-                    className="md:w-2/5"
+                    className="md:w-2/5 self-start"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
                 >
                     <motion.img
-                        src="/coding-3-75.svg"
+                        src="/images/my_photo_2.png"
                         alt="Full Stack Developer Illustration"
                         className="w-full rounded-lg"
                         whileHover={{ scale: 1.05, rotate: 2, boxShadow: "0 8px 20px rgba(0,173,181,0.3)" }}
