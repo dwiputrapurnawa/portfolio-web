@@ -50,16 +50,20 @@ export default function ContactSection() {
     return (
         <section id="contact" className="relative py-20 px-6 md:px-20 bg-white overflow-hidden">
             {/* Heading */}
-            <motion.h2
-                className="text-4xl md:text-5xl font-extrabold mb-16 text-center text-gray-900 relative inline-block"
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-            >
-                Contact Me
-                <span className="absolute left-1/2 -bottom-3 w-24 h-1 bg-[#00ADB5] rounded-full -translate-x-1/2 shadow-md"></span>
-            </motion.h2>
+            <div className="flex justify-center">
+                <motion.h2
+                    className="relative text-4xl md:text-5xl font-extrabold mb-16 text-gray-900 inline-block"
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    Contact Me
+                    <span className="absolute left-1/2 -bottom-3 w-24 h-1 bg-[#00ADB5] rounded-full -translate-x-1/2 shadow-md"></span>
+                </motion.h2>
+            </div>
+
+
 
             <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
                 {/* Form */}

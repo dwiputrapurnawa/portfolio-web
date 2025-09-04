@@ -107,7 +107,7 @@ export default function AboutSection() {
                     transition={{ duration: 0.7 }}
                 >
                     <motion.img
-                        src="/images/my_photo_2.png"
+                        src="/coding-3-75.svg"
                         alt="Full Stack Developer Illustration"
                         className="w-full rounded-lg"
                         whileHover={{ scale: 1.05, rotate: 2, boxShadow: "0 8px 20px rgba(0,173,181,0.3)" }}
