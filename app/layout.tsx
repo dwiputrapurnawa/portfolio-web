@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <body
-        className={`${montserrat.variable} ${openSans.variable} antialiased`}
+        className="antialiased"
       >
         {children}
       </body>
