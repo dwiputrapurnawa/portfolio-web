@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
+import { Providers } from '@/app/providers';
 import "../styles/globals.css";
 
 const montserrat = Montserrat({
@@ -26,11 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`} suppressHydrationWarning>
       <body
         className="antialiased"
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
+
       </body>
     </html>
   );

@@ -1,83 +1,37 @@
 @import "tailwindcss";
 
+/* ========================
+   CSS Variables Light/Dark
+======================== */
 :root {
-  --background: #EEEEEE;
+  --background: #ffffff;
   --foreground: #222831;
+  --accent: #00ADB5;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --card-color: #ffffff;
+  --sub-text: #6B7280;
+  --border-card-color: #E5E7EB;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-montserrat: var(--font-montserrat);
-  --font-open-sans: var(--font-open-sans);
+.dark {
+  --background: #222831;
+  --foreground: #ffffff;
+  --accent: #00ADB5;
+  --card-color: #393E46;
+  --sub-text: #FAFAFA;
+  --border-card-color: #4B5563;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
+/* Body Global */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family:  var(--font-montserrat), sans-serif;
+  font-family: var(--font-montserrat);
 }
 
-@keyframes gradient-x {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* Animations */
+@keyframes gradient-x { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.animate-gradient-x { background-size: 200% 200%; animation: gradient-x 3s ease infinite; }
 
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.animate-fadeIn.delay-100 { animation-delay: 0.1s; }
-.animate-fadeIn.delay-200 { animation-delay: 0.2s; }
-.animate-fadeIn.delay-300 { animation-delay: 0.3s; }
-.animate-fadeIn.delay-400 { animation-delay: 0.4s; }
-
-/* Fade Up */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeUp {
-  animation: fadeUp 1s forwards;
-}
-
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-
-/* Zoom In untuk foto */
-@keyframes zoomIn {
-  0% { transform: scale(0.9); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.animate-zoomIn {
-  animation: zoomIn 1s ease-out forwards;
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fadeIn { animation: fadeIn 0.8s ease forwards; }

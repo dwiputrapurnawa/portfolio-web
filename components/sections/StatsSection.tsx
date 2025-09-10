@@ -40,11 +40,11 @@ const stats = [
 
 export default function StatsSection() {
     return (
-        <section className="py-20 bg-white" id="stats">
+        <section className="py-20" id="stats" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="max-w-6xl mx-auto px-6 lg:px-12">
                 {/* Judul */}
                 <motion.h2
-                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16 text-gray-900"
+                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16 "
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function StatsSection() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.2 }}
                                 whileHover={{ scale: 1.05, boxShadow: "0px 8px 24px rgba(0,0,0,0.15)" }}
-                                className="bg-white p-6 rounded-2xl shadow-md cursor-pointer"
+                                className="p-6 rounded-2xl shadow-md cursor-pointer" style={{ backgroundColor: "var(--card-color)" }}
                             >
                                 <motion.h3
                                     className="text-4xl font-extrabold"
@@ -85,7 +85,7 @@ export default function StatsSection() {
                                     {count}
                                     {stat.suffix}
                                 </motion.h3>
-                                <p className="mt-2 text-gray-600 font-medium">
+                                <p className="mt-2 font-medium">
                                     {stat.label}
                                 </p>
                             </motion.div>

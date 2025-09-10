@@ -43,11 +43,11 @@ const itemVariants = {
 
 export default function Services() {
     return (
-        <section id="services" className="py-20 bg-white">
+        <section id="services" className="py-20" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
                 {/* Judul */}
                 <motion.h2
-                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-12 text-gray-900"
+                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-12"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -76,9 +76,10 @@ export default function Services() {
                             variants={itemVariants}
                             whileHover={{ y: -10, scale: 1.03 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="bg-white rounded-2xl shadow-lg p-8 cursor-pointer border border-gray-200 hover:shadow-2xl transition"
+                            className="rounded-2xl shadow-lg p-8 cursor-pointer border border-gray-200 hover:shadow-2xl transition"
                             style={{
                                 borderColor: "transparent",
+                                backgroundColor: "var(--card-color)"
                             }}
                         >
                             <motion.div
@@ -94,7 +95,7 @@ export default function Services() {
                             >
                                 {service.title}
                             </h3>
-                            <p className="text-gray-600">{service.description}</p>
+                            <p>{service.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>

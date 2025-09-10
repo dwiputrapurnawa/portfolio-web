@@ -19,7 +19,7 @@ const itemVariants = {
 
 export default function PortfolioListClient({ projects }: { projects: Project[] }) {
     return (
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Heading */}
             <motion.h2
                 className="relative text-4xl font-bold text-center mb-12"
@@ -46,7 +46,8 @@ export default function PortfolioListClient({ projects }: { projects: Project[] 
                     <motion.div
                         key={index}
                         variants={itemVariants}
-                        className="bg-white rounded-2xl shadow-lg overflow-hidden group flex flex-col transition-all duration-500 hover:shadow-2xl"
+                        className="rounded-2xl shadow-lg overflow-hidden group flex flex-col transition-all duration-500 hover:shadow-2xl"
+                        style={{ backgroundColor: "var(--card-color)" }}
                     >
                         {/* Image */}
                         <div className="relative w-full h-56">
@@ -72,8 +73,8 @@ export default function PortfolioListClient({ projects }: { projects: Project[] 
                                 )}
 
                                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                <p className="text-sm text-gray-500 mb-4">Client: {project.client}</p>
-                                <p className="text-gray-700 mb-6">{project.description}</p>
+                                <p className="text-sm mb-4" style={{ color: "var(--sub-text)" }}>Client: {project.client}</p>
+                                <p className="mb-6">{project.description}</p>
                             </div>
 
                             <a

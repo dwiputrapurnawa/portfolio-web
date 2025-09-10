@@ -48,11 +48,11 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="relative py-20 px-6 md:px-20 bg-white overflow-hidden">
+        <section id="contact" className="relative py-20 px-6 md:px-20 overflow-hidden" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Heading */}
             <div className="flex justify-center">
                 <motion.h2
-                    className="relative text-4xl md:text-5xl font-extrabold mb-16 text-gray-900 inline-block"
+                    className="relative text-4xl md:text-5xl font-extrabold mb-16 inline-block"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -68,17 +68,18 @@ export default function ContactSection() {
             <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
                 {/* Form */}
                 <motion.form
-                    className="bg-white rounded-2xl shadow-lg p-8 space-y-6 border border-gray-100"
+                    className="rounded-2xl shadow-lg p-8 space-y-6 border"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     onSubmit={handleSubmit}
+                    style={{ backgroundColor: "var(--card-color)", borderColor: "var(--border-card-color)" }}
                 >
                     <input type="hidden" name="_captcha" value="false" />
 
                     <motion.div variants={itemVariants} className="relative">
-                        <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                        <label className="block font-semibold mb-2">Name</label>
                         <div className="relative">
                             <FaUser className="absolute left-4 top-3 text-gray-400" />
                             <input
@@ -92,7 +93,7 @@ export default function ContactSection() {
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
-                        <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                        <label className="block font-semibold mb-2">Email</label>
                         <div className="relative">
                             <FaRegEnvelope className="absolute left-4 top-3 text-gray-400" />
                             <input
@@ -106,7 +107,7 @@ export default function ContactSection() {
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
-                        <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                        <label className="block font-semibold mb-2">Message</label>
                         <div className="relative">
                             <FaCommentDots className="absolute left-4 top-4 text-gray-400" />
                             <textarea
@@ -164,9 +165,10 @@ export default function ContactSection() {
                     ].map((item, i) => (
                         <motion.div
                             key={i}
-                            className="flex items-center gap-4 p-5 rounded-xl bg-white border border-gray-100 shadow hover:shadow-md transition-all cursor-pointer group"
+                            className="flex items-center gap-4 p-5 rounded-xl border shadow hover:shadow-md transition-all cursor-pointer group"
                             variants={itemVariants}
                             whileHover={{ scale: 1.03 }}
+                            style={{ backgroundColor: "var(--card-color)", borderColor: "var(--border-card-color)" }}
                         >
                             <span className="text-[#00ADB5] group-hover:rotate-6 transition-transform duration-300">
                                 {item.icon}
@@ -175,12 +177,12 @@ export default function ContactSection() {
                                 <a
                                     href={item.link}
                                     target="_blank"
-                                    className="text-gray-800 font-medium hover:text-[#00ADB5] transition-colors"
+                                    className="font-medium hover:text-[#00ADB5] transition-colors"
                                 >
                                     {item.text}
                                 </a>
                             ) : (
-                                <span className="text-gray-800 font-medium">{item.text}</span>
+                                <span className="font-medium">{item.text}</span>
                             )}
                         </motion.div>
                     ))}

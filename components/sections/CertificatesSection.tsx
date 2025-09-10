@@ -34,11 +34,11 @@ const itemVariants = {
 
 export default function CertificatesSection() {
     return (
-        <section id="certificates" className="py-20 bg-white">
+        <section id="certificates" className="py-20" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="max-w-5xl mx-auto px-6 lg:px-12">
                 {/* Judul */}
                 <motion.h2
-                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16 text-gray-900"
+                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -65,10 +65,8 @@ export default function CertificatesSection() {
                             variants={itemVariants}
                             whileHover={{ y: -6, boxShadow: "0px 12px 25px rgba(0,0,0,0.1)" }}
                             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                            className={`relative bg-white rounded-2xl p-6 border ${cert.status === "expired"
-                                ? "border-gray-300 opacity-80"
-                                : "border-gray-200"
-                                }`}
+                            className={`relative rounded-2xl p-6 border`}
+                            style={{ backgroundColor: "var(--card-color)", borderColor: "var(--border-card-color)" }}
                         >
                             {/* Icon */}
                             <div
@@ -87,17 +85,17 @@ export default function CertificatesSection() {
                                     href={cert.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-lg font-semibold text-gray-900 hover:underline hover:text-[#00ADB5]"
+                                    className="text-lg font-semibold  hover:underline hover:text-[#00ADB5]"
                                 >
                                     {cert.title}
                                 </a>
                             ) : (
-                                <h3 className="text-lg font-semibold text-gray-900">
+                                <h3 className="text-lg font-semibold ">
                                     {cert.title}
                                 </h3>
                             )}
 
-                            <p className="text-gray-500">
+                            <p style={{ color: "var(--sub-text)" }}>
                                 {cert.issuer} • {cert.year}
                             </p>
 

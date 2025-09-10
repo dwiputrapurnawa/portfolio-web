@@ -45,7 +45,7 @@ export default function SkillsSection() {
     return (
         <section
             id="skills"
-            className="py-16 px-8 md:px-16 bg-white relative overflow-hidden"
+            className="py-16 px-8 md:px-16 relative overflow-hidden" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
         >
             {/* Optional subtle background pattern */}
             <div className="absolute inset-0 bg-[url('/pattern-dots.svg')] opacity-5 pointer-events-none"></div>
@@ -53,14 +53,14 @@ export default function SkillsSection() {
             <div className="flex flex-col items-center gap-10 relative z-10">
                 {/* Heading */}
                 <div className="text-center">
-                    <h2 className="text-4xl font-bold mb-4 text-gray-900 relative inline-block">
+                    <h2 className="text-4xl font-bold mb-4 relative inline-block">
                         My Skills
                         <span
                             className="absolute left-1/2 -bottom-2 w-20 h-1 rounded-full -translate-x-1/2"
                             style={{ backgroundColor: MAIN_COLOR }}
                         ></span>
                     </h2>
-                    <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+                    <p className="text-lg max-w-2xl mx-auto">
                         These are the technologies and tools I frequently use. Hover over each skill for subtle interactions.
                     </p>
                 </div>

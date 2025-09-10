@@ -39,11 +39,11 @@ const itemVariants = {
 
 export default function ExperienceSection() {
     return (
-        <section id="experience" className="py-20 bg-white">
+        <section id="experience" className="py-20" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             <div className="max-w-5xl mx-auto px-6 lg:px-12">
                 {/* Judul */}
                 <motion.h2
-                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16 text-gray-900"
+                    className="relative inline-block text-4xl md:text-5xl font-extrabold mb-16"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -79,7 +79,8 @@ export default function ExperienceSection() {
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className="relative bg-white shadow-lg rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition"
+                                className="relative shadow-lg rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition"
+                                style={{ backgroundColor: "var(--card-color)", borderColor: "var(--border-card-color)" }}
                             >
                                 {/* Icon animasi */}
                                 <motion.div
@@ -94,13 +95,13 @@ export default function ExperienceSection() {
                                 </motion.div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-semibold text-gray-900">
+                                <h3 className="text-xl font-semibold">
                                     {exp.role}
                                 </h3>
-                                <p className="text-gray-500 font-medium mb-2">
+                                <p className="font-medium mb-2" style={{ color: "var(--sub-text)" }}>
                                     {exp.company} • {exp.period}
                                 </p>
-                                <p className="text-gray-600">{exp.description}</p>
+                                <p>{exp.description}</p>
                             </motion.div>
                         ))}
                     </motion.div>

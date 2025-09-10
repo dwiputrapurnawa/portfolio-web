@@ -25,10 +25,10 @@ export default function AboutSection() {
     };
 
     return (
-        <section id="about" className="py-16 px-8 md:px-20 bg-white">
+        <section id="about" className="py-16 px-8 md:px-20" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Heading */}
             <motion.h2
-                className="text-4xl md:text-5xl font-bold mb-8 text-center text-gray-900 relative inline-block"
+                className="text-4xl md:text-5xl font-bold mb-8 text-center relative inline-block"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                 >
                     <motion.p
-                        className="text-lg md:text-xl text-gray-800 leading-relaxed"
+                        className="text-lg md:text-xl leading-relaxed"
                         variants={itemVariants}
                     >
                         Hi, I'm{" "}
@@ -66,7 +66,7 @@ export default function AboutSection() {
                     </motion.p>
 
                     <motion.p
-                        className="text-lg md:text-xl text-gray-800 leading-relaxed"
+                        className="text-lg md:text-xl leading-relaxed"
                         variants={itemVariants}
                     >
                         I specialize in frontend and backend development with{" "}
@@ -88,7 +88,7 @@ export default function AboutSection() {
                     </motion.p>
 
                     <motion.p
-                        className="text-lg md:text-xl text-gray-800 leading-relaxed"
+                        className="text-lg md:text-xl leading-relaxed"
                         variants={itemVariants}
                     >
                         I enjoy solving complex problems, learning new technologies, and building applications that help clients succeed.
@@ -111,7 +111,7 @@ export default function AboutSection() {
 
                     {/* Technology Icons */}
                     <motion.div
-                        className="flex gap-6 mt-4 text-2xl text-gray-600"
+                        className="flex gap-6 mt-4 text-2xl"
                         variants={itemVariants}
                     >
                         <motion.span
