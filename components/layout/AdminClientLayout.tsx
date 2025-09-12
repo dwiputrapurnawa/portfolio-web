@@ -14,7 +14,10 @@ export default function AdminClientLayout({ children }: { children: React.ReactN
     return (
         <div className="flex">
             <Sidebar />
-            {children}
+            <div className="ml-64 p-6">
+                {children}
+            </div>
+
         </div>
     );
 

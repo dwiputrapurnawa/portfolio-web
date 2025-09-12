@@ -28,7 +28,7 @@ export default function Sidebar() {
 
     return (
         <motion.div
-            className="flex min-h-screen"
+            className="flex min-h-screen fixed top-0 left-0"
             initial={{ x: -200 }}
             animate={{ x: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 15 }}
