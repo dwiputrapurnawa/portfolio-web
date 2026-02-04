@@ -17,7 +17,7 @@ const itemVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
-export default function PortfolioListClient({ projects }: { projects: Project[] }) {
+export default function PortfolioList({ projects }: { projects: Project[] }) {
     return (
         <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
             {/* Heading */}
@@ -62,29 +62,19 @@ export default function PortfolioListClient({ projects }: { projects: Project[] 
                         {/* Content */}
                         <div className="p-4 md:p-6 flex flex-col flex-1 justify-between">
                             <div>
-                                {/* Optional project type tag */}
-                                {project.type && (
-                                    <span
-                                        className="inline-block px-2 py-1 text-xs rounded-full font-semibold mb-2"
-                                        style={{ backgroundColor: MAIN_COLOR, color: "#fff" }}
-                                    >
-                                        {project.type}
-                                    </span>
-                                )}
-
                                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                                 <p className="text-sm mb-4" style={{ color: "var(--sub-text)" }}>Client: {project.client}</p>
                                 <p className="mb-6">{project.description}</p>
                             </div>
 
-                            <a
+                            {/* <a
                                 href={`/projects/${project.slug}`}
                                 className="mt-auto inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium text-white transition-all duration-300"
                                 style={{ backgroundColor: MAIN_COLOR }}
                             >
                                 Lihat Detail
                                 <ArrowUpRightFromSquare className="w-4 h-4 ml-2" />
-                            </a>
+                            </a> */}
                         </div>
                     </motion.div>
                 ))}
