@@ -32,10 +32,10 @@ function useCounter(target: number, duration = 1500) {
 }
 
 const stats = [
-    { label: "Years of Learning", value: 2, suffix: "+" },
-    { label: "Projects Completed", value: 8, suffix: "+" },
-    { label: "Tech Stack Mastered", value: 6, suffix: "+" },
-    { label: "Internships", value: 2, suffix: "" },
+    { label: "Years of Learning", value: 7, suffix: "+" },
+    { label: "Projects Completed", value: 3, suffix: "+" },
+    { label: "Tech Stack Mastered", value: 14, suffix: "+" },
+    { label: "Internships", value: 1, suffix: "" },
 ];
 
 export default function StatsSection() {

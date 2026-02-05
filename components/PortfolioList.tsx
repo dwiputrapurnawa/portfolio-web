@@ -55,9 +55,10 @@ export default function PortfolioList({ projects }: { projects: Project[] }) {
                                 src={project.image}
                                 alt={project.title}
                                 fill
-                                className="object-cover group-hover:scale-105 group-hover:brightness-105 transition-transform duration-500"
+                                className="object-contain transition-transform duration-500"
                             />
                         </div>
+
 
                         {/* Content */}
                         <div className="p-4 md:p-6 flex flex-col flex-1 justify-between">

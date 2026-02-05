@@ -8,17 +8,16 @@ const MAIN_COLOR = "#00ADB5";
 
 const certificates = [
     {
-        title: "Sertifikat Kompetensi BNSP – Junior Web Developer",
+        title: "Sertifikat Kompetensi BNSP – Software Development",
         issuer: "BNSP",
-        year: "2021",
-        status: "expired", // expired | active
+        year: "2022",
+        status: "expired"
     },
     {
-        title: "The Complete React Developer Course",
-        issuer: "Udemy",
-        year: "2024",
-        status: "active",
-        link: "https://udemy-certificate-url.com/xxxxx",
+        title: "Certificate Business Intelligence Associate",
+        issuer: "Logical Operations",
+        year: "2022",
+        status: "expired",
     },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaUser, FaRegEnvelope, FaCommentDots } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaUser, FaRegEnvelope, FaCommentDots, FaGitlab } from "react-icons/fa";
 import { useState } from "react";
 
 const containerVariants = {
@@ -162,6 +162,11 @@ export default function ContactSection() {
                             text: "github.com/dwiputrapurnawa",
                             link: "https://github.com/dwiputrapurnawa",
                         },
+                        {
+                            icon: <FaGitlab className="w-7 h-7" />,
+                            text: "gitlab.com/dwiputrapurnawa",
+                            link: "https://gitlab.com/dwiputrapurnawa"
+                        }
                     ].map((item, i) => (
                         <motion.div
                             key={i}
