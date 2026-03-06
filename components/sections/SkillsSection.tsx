@@ -88,7 +88,7 @@ export default function SkillsSection() {
                                 boxShadow: `0 8px 20px rgba(0,173,181,0.4)`,
                             }}
                         >
-                            {skillIcons[skill] || null} {skill}
+                          {skillIcons[skill as keyof typeof skillIcons]} {skill}
                         </motion.div>
                     ))}
                 </motion.div>

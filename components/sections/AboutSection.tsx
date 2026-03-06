@@ -50,20 +50,20 @@ export default function AboutSection() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <motion.p
-                        className="text-lg md:text-xl leading-relaxed"
-                        variants={itemVariants}
-                    >
-                        Hi, I'm{" "}
-                        <span className="font-semibold" style={{ color: MAIN_COLOR }}>
-                            Ida Bagus Dwi Putra Purnawa
-                        </span>
-                        , a{" "}
-                        <span className="font-semibold" style={{ color: MAIN_COLOR }}>
-                            Full Stack Web Developer
-                        </span>{" "}
-                        focused on creating modern, responsive, and high-performance web applications.
-                    </motion.p>
+              <motion.p
+    className="text-lg md:text-xl leading-relaxed"
+    variants={itemVariants}
+>
+    Hi, I&apos;m{" "}
+    <span className="font-semibold" style={{ color: MAIN_COLOR }}>
+        Ida Bagus Dwi Putra Purnawa
+    </span>
+    , a{" "}
+    <span className="font-semibold" style={{ color: MAIN_COLOR }}>
+        Full Stack Web Developer
+    </span>{" "}
+    focused on creating modern, responsive, and high-performance web applications.
+</motion.p>
 
                     <motion.p
                         className="text-lg md:text-xl leading-relaxed"

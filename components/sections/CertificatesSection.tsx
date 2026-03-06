@@ -11,13 +11,15 @@ const certificates = [
         title: "Sertifikat Kompetensi BNSP – Software Development",
         issuer: "BNSP",
         year: "2022",
-        status: "expired"
+        status: "expired",
+        link: ""
     },
     {
         title: "Certificate Business Intelligence Associate",
         issuer: "Logical Operations",
         year: "2022",
         status: "expired",
+        link: ""
     },
 ];
 

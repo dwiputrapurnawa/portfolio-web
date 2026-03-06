@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Project } from '@/types/index';
-import { ArrowUpRightFromSquare } from "lucide-react";
 
 const MAIN_COLOR = "#00ADB5";
 
@@ -52,7 +51,7 @@ export default function PortfolioList({ projects }: { projects: Project[] }) {
                         {/* Image */}
                         <div className="relative w-full h-56">
                             <Image
-                                src={project.image}
+                                src={project.image ?? ""}
                                 alt={project.title}
                                 fill
                                 className="object-contain transition-transform duration-500"

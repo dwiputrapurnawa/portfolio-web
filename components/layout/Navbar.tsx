@@ -3,6 +3,7 @@
 import { ArrowUpRight, SunIcon, MoonIcon, Code2 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
     const { theme, setTheme } = useTheme();
@@ -26,7 +27,7 @@ export default function Navbar() {
             }}
         >
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
                 <Code2
                     className="w-8 h-8 text-[#00ADB5] transition-all duration-500
             group-hover:-translate-y-1 group-hover:scale-125
@@ -36,7 +37,7 @@ export default function Navbar() {
                 <span className="font-bold tracking-tight text-lg text-[var(--color-foreground)]">
                     Ida Bagus Dwi <span className="text-[#00ADB5]">Putra Purnawa</span>
                 </span>
-            </a>
+            </Link>
 
             {/* Menu */}
             <ul className="hidden md:flex gap-6 font-semibold text-[var(--color-foreground)]">
